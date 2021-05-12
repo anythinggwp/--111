@@ -2,120 +2,121 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//Класс Triangle
+/**
+*\briefКласс Triangle
+*/
 class Triangle
 {
 private:
-    //Стороны треугольника а,b,с
-    double a;
-    double b;
-    double c;
+    /*
+    * \brief Здесь содержаться стороны треугольника
+    * \param сторона a
+    * \param сторона b
+    * \param сторона с
+    */
+    double _a;
+    double _b;
+    double _c;
 public:
-    //Конструктор по умолчанию
+    /**
+    *\briefКонструктор по умолчанию
+    */
     Triangle()
     {
 
     }
-    //Конструктор принимающий сразу все значения сторон треугольника(кроме нуля)
-    Triangle(double valuea,double valueb,double valuec)
-    {
-        if (valuea != 0 & valueb != 0 & valuec != 0)
-        {
-            a = abs(valuea);
-            b = abs(valueb);
-            c = abs(valuec);
-        }
-        else
-        {
-            return;
-        }
-    }
-    // Диструктор класса Triangle
-    ~Triangle()
-    {
-
-    }
-    //Геттер стороны а
-    //возвращает а
+    /*
+    * \brief Кастомный конструктор класса Triangle принимающий значения сторон
+    * \param значение сторон: а,b,c
+    */
+    Triangle(double valuea, double valueb, double valuec);
+    /*
+    *\brief Диструктор класса Triangle
+    */
+    ~Triangle() = default;
+    /*
+    * \brief Геттер стороны a
+    * \param возвращает сторону a
+    */
     double get_a()
     {
-        return a;
+        return _a;
     }
-    //Сеттер стороны а
-    //Принимает значение стороны a
-    void set_a(double valuea)
-    {
-        a = valuea;
-    }
-    //Геттер стороны b
-    //возвращает b
+    /*
+    * \brief Сеттер стороны a
+    * \param изменяет значение стороны a (принимает значения исключительно больше нуля)
+    */
+    void set_a(double valuea);
+    /*
+     * \brief Геттер стороны b
+     * \param возвращает сторону b
+     */
     double get_b()
     {
-        return b;
+        return _b;
     }
-    //Сеттер стороны b
-    //Принимает значение стороны b
-    void set_b(double valueb)
-    {
-        b = valueb;
-    }
-    //Геттер стороны c
-    //возвращает с
+    /*
+    * \brief Сеттер стороны b
+    * \param изменяет значение стороны b (принимает значения исключительно больше нуля)
+    */
+    void set_b(double valueb);
+    /*
+     * \brief Геттер стороны c
+     * \param возвращает сторону c
+     */
     double get_c()
     {
-        return c;
+        return _c;
     }
-    //Сеттер стороны c
-    //Принимает значение стороны c
-    void set_c(double valuec)
-    {
-        c = valuec;
-    }
-    //Геттер периметра
-    //возвращает периметр
+    /*
+    * \brief Сеттер стороны c
+    * \param изменяет значение стороны c (принимает значения исключительно больше нуля)
+    */
+    void set_c(double valuec);
+    /*
+     * \brief Геттер периметра треугольника
+     * \param Вычисляет и возвращает периметр
+     */
     double get_perimetr()
     {
-        return a + b + c;
+        return _a + _b + _c;
     }
-    //Геттер площади
-    //возвращает площадь
+    /*
+     * \brief Геттер площади треугольника
+     * \param Вычисляет и возвращает площадь
+     */
     double get_square()
     {
-        return sqrt((get_perimetr() / 2) * ((get_perimetr() / 2) - a) * ((get_perimetr()) / 2 - b) * ((get_perimetr() / 2) - c));
+        return sqrt((get_perimetr() / 2) * ((get_perimetr() / 2) - _a) * ((get_perimetr()) / 2 - _b) * ((get_perimetr() / 2) - _c));
     }
-    //возвращаем строку с типом треугольника
-    string what_is_it_triangle()
-    {
-        if (a == c & a == b)
-        {
-            return "равносторонний";
-        }
-        if (a != b & b != c & a != c)
-        {
-            return "прямоугольный";
-        }
-        else
-        {
-            return "равнобедренный";
-        }
-    }
-    //Геттер высоты стороны а
-    //возвращает высоту a
+     /*
+     * \brief Функция определяющая вид треугольника (прямоугольный,равносторонний,равнобедренный)
+     * \param сторонный треугольника
+     */
+    string mod_of_triangle();
+     /*
+     * \brief Геттер высоты треугольника от стороны a
+     * \param Вычисляет и возвращает высоту треугольника от стороны а
+     */
     double get_ha()
     {
-        return 2 * get_square() / a;
+        return 2 * get_square() / _a;
     }
-    //Геттеры высоты стороны b
-    //возвращает высоту b
+    /*
+    * \brief Геттер высоты треугольника от стороны b
+    * \param Вычисляет и возвращает высоту треугольника от стороны b
+    */
     double get_hb()
     {
-        return 2 * get_square() / b;
+        return 2 * get_square() /_b;
     }
-    //Геттер высоты стороны c
-    //возвращает высоту c
+    /*
+    * \brief Геттер высоты треугольника от стороны c
+    * \param Вычисляет и возвращает высоту треугольника от стороны c
+    */
     double get_hc()
     {
-        return 2 * get_square() / c;
+        return 2 * get_square() / _c;
     }
 
 };
