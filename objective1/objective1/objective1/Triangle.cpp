@@ -1,41 +1,42 @@
 #include "Triangle.h"
 
-Triangle::Triangle(double valuea, double valueb, double valuec)
+Triangle::Triangle(const double value_a,const double value_b, const double value_c)
 {
-    if (valuea != 0 && valueb != 0 && valuec != 0 && valuea > 0 && valueb > 0 && valuec > 0)
+    if(proportion(value_a,value_b,value_c)==1)
     {
-        _a = valuea;
-        _b = valueb;
-        _c = valuec;
+        Triangle::set_a(value_a);
+        Triangle::set_b(value_b);
+        Triangle::set_c(value_c);
     }
 }
-void Triangle::set_a(double valuea)
+void Triangle::set_a(const double value_a)
 {
-    if (valuea != 0 & valuea > 0)
+    if (value_a != 0 && value_a > 0)
     {
-        _a = valuea;
-    }
-}void Triangle::set_b(double valueb)
-{
-    if (valueb != 0 & valueb > 0)
-    {
-        _b = valueb;
+        this->_a = value_a;
     }
 }
-void Triangle::set_c(double valuec)
+void Triangle::set_b(const double value_b)
 {
-    if (valuec != 0 & valuec > 0)
+    if (value_b != 0 && value_b > 0)
     {
-        _c = valuec;
+        this->_b = value_b;
     }
 }
-string Triangle::mod_of_triangle()
+void Triangle::set_c(const double value_c)
 {
-    if (_a==_c & _a==_b)
+    if (value_c != 0 && value_c > 0)
+    {
+        this->_c = value_c;
+    }
+}
+string Triangle::mod_triangle()
+{
+    if ((double_compare(_a,_b,0.000000012)== 1) && (double_compare(_a,_c, 0.000000012)==1))
     {
         return "равносторонний";
     }
-    if (_a!=_b & _b!=_c &_a !=_c)
+    if (double_compare(_a, _b, 0.000000012)==0 && double_compare(_a, _c, 0.000000012) == 0 && double_compare(_b, _c, 0.000000012) == 0)
     {
         return "прямоугольный";
     }
