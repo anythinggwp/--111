@@ -50,11 +50,4 @@ public:
 	{
 		return num_1 + num_2 + num_3;
 	}
-	double angle_a()
-	{
-		double a = get_num1();
-		double b = get_num2();
-		double c = get_num3();
-		return ((a * a + b * b) - c * c) / 2 * a * c;
-	}
 };
