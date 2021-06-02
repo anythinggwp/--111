@@ -1,6 +1,9 @@
-#include <cmath>
+﻿#include <cmath>
 #include <iostream>
-#include "Figure.h"
+#include "Ellipse.h"
+#include "Parallelepiped.h"
+#include "Rhomb.h"
+
 using namespace std;
 
 int main() {

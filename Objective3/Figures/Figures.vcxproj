@@ -140,11 +140,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Figure.cpp" />
+    <ClCompile Include="Elipse.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Parallelepiped.cpp" />
+    <ClCompile Include="Rhomb.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ellipse.h" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="Parallelepiped.h" />
+    <ClInclude Include="Rhomb.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
