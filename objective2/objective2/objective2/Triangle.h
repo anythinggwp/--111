@@ -1,10 +1,11 @@
 ﻿#pragma once
 #include "Triad.h"
-#include <cmath>
-using namespace std;
+#include <iostream>
 class Triangle : public Triad
 {
 private:
+	const double pi = 3.14159265358979323846;
+	const int sum_angle = 180;
 public:
 	/*
 	* \brief Коснтруктор класса Triangle
@@ -25,25 +26,44 @@ public:
 	/*
 	* \brief функция нахождения угола альфа
 	*/
-	double angle_a();
+	friend ostream& operator<<(ostream& os, const Triangle& obj);
+	void set_num1(const double num) override
+	{
+		if (proportion(num, get_num2(), get_num3())) {
+
+			::Triad::set_num1(num);
+		}
+	}
+	void set_num2(const double num) override
+	{
+		if (proportion(get_num1(), num, get_num3())) 
+		{
+			::Triad::set_num2(num);
+		}
+	}
+	void set_num3(const double num) override
+	{
+		if (proportion(get_num1(), get_num2(), num))
+		{
+			::Triad::set_num3(num);
+		}
+	}
+	double angle_a() const;
 	/*
 	* \brief функция нахождения угола альфа
 	*/
-	double angle_b();
+	double angle_b() const;
 	/*
 	* \brief функция нахождения угола альфа
 	*/
-	double angle_y();
+	double angle_y() const;
 	/*
 	* \brief проверка треугольника на вырожденность
 	*/
 	/*
 	* \brief площадь треугольника
 	*/
-	double get_square()
-	{
-		return sqrt((sum() / 2) * ((sum() / 2) - get_num1()) * ((sum()) / 2 - get_num2()) * ((sum() / 2) - get_num3()));
-	}
+	double get_square() const;
 	/*
 	* \brief проверка треугольника на вырожденность
 	*/

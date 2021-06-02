@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <cmath>
+#include <ostream>
 using namespace std;
 class Triad
 {
@@ -32,53 +33,42 @@ public:
 	* \brief деструктор по умолчанию
 	*/
 	~Triad() = default;
+	friend ostream& operator<<(ostream& os, const Triad& obj);
 	/*
 	* \brief сеттер num1
 	*/
-	void set_num1(const double num)
+	virtual void set_num1(const double num)
 	{
 		this->num1 = num;
 	}
 	/*
 	* \brief сеттер num2
 	*/
-	void set_num2(const double num)
+	virtual void set_num2(const double num)
 	{
 		this->num2 = num;
 	}
 	/*
 	* \brief сеттер num3
 	*/
-	void set_num3(const double num)
+	virtual void set_num3(const double num)
 	{
 		this->num3 = num;
 	}
 	/*
 	* \brief геттер num1
 	*/
-	double get_num1()
-	{
-		return num1;
-	}
+	double get_num1() const;
 	/*
 	* \brief геттер num2
 	*/
-	double get_num2()
-	{
-		return num2;
-	}
+	double get_num2() const;
 	/*
 	* \brief геттер num3
 	*/
-	double get_num3()
-	{
-		return num3;
-	}
+	double get_num3() const;
 	/*
 	* \brief сумма трех чисел
 	*/
-	double sum()
-	{
-		return num1 + num2 + num3;
-	}
+	double sum() const;
 };
