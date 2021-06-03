@@ -2,7 +2,7 @@
 void main()
 {
 	setlocale(LC_ALL, "ru");
-	long double a, b, c;
+	double a, b, c;
 	cout << "Enter a:" << "\n";
 	cin >> a;
 	cout << "Enter b:" << "\n";

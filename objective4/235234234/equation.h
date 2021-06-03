@@ -32,6 +32,7 @@ public:
 		this->one.root2 = (-b - sqrt(pow(b, 2) - (4 * a * c))) / 2 * a;
 		this->disc = pow(b, 2) - (4 * a * c);
 	}
+	~equation() = default;
 	/*
 	* Геттер для корней уоавнения
 	*/
