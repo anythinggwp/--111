@@ -27,27 +27,9 @@ public:
 	* \brief функция нахождения угола альфа
 	*/
 	friend ostream& operator<<(ostream& os, const Triangle& obj);
-	void set_num1(const double num) override
-	{
-		if (proportion(num, get_num2(), get_num3())) {
-
-			::Triad::set_num1(num);
-		}
-	}
-	void set_num2(const double num) override
-	{
-		if (proportion(get_num1(), num, get_num3())) 
-		{
-			::Triad::set_num2(num);
-		}
-	}
-	void set_num3(const double num) override
-	{
-		if (proportion(get_num1(), get_num2(), num))
-		{
-			::Triad::set_num3(num);
-		}
-	}
+	void set_num1(const double num) override;
+	void set_num2(const double num) override;
+	void set_num3(const double num) override;
 	double angle_a() const;
 	/*
 	* \brief функция нахождения угола альфа

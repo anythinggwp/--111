@@ -6,7 +6,7 @@ void main()
 {
 	setlocale(LC_ALL, "ru");
 	Triangle one(3, 4, 5);
-	one.set_num1(27);
+	//one.set_num1(27);
 	cout << one.get_num1()<< "\n";
 	cout << one.get_num2()<< "\n";
 	cout << one.get_num3()<< "\n";

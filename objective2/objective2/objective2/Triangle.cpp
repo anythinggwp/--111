@@ -6,6 +6,27 @@ Triangle::Triangle(const double a, const double b, const double c)
 		::Triad::set_num2(b);
 		::Triad::set_num3(c);
 }
+void Triangle::set_num1(const double num)
+{
+	if (!proportion(num, get_num2(), get_num3())) throw ("Треугольник не существует"); 
+	{
+		::Triad::set_num1(num);
+	}
+}
+void Triangle::set_num2(const double num)
+{
+	if (!proportion(get_num1(), num, get_num3())) throw ("Треугольник не существует");
+	{
+		::Triad::set_num2(num);
+	}
+}
+void Triangle::set_num3(const double num)
+{
+	if (!proportion(get_num1(), get_num2(), num)) throw ("Треугольник не существует");
+	{
+		::Triad::set_num3(num);
+	}
+}
 double Triangle::angle_a() const
 {
 	double rad = (pow(get_num1(),2) + pow(get_num3(),2) - pow(get_num2(),2)) / (2 * get_num1() * get_num3());
